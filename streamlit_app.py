@@ -42,4 +42,5 @@ if ingredient_list:
         session.sql(my_insert_stmt).collect()
         st.success('Your smoothie is ordered!', icon="✅")
     smoothiefroot_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-    st.text(smoothiefroot_response.json())
+    #st.text(smoothiefroot_response.json()) 
+    sf_df = st.dataframe(data=smoothiefroot_response.json(), user_container_width=True)
